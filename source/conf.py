@@ -27,9 +27,9 @@ source_suffix = ['.rst', '.md']
 
 # -- Project information -----------------------------------------------------
 
-project = u'OpenCV'
-copyright = u'2018, Hunag Xinyuan'
-author = u'Hunag Xinyuan'
+project = u'python and database'
+copyright = u'2020, thisisbadBao'
+author = u'thisisbadBao'
 
 # The short X.Y version
 version = u''
