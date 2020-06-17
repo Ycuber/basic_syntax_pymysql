@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>三、使用Python3操作数据库 &mdash; Python与数据库  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="二、安装MySQL" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Python与数据库
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="前言.html">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">一、数据库概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">二、安装MySQL</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">三、使用Python3操作数据库</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pymysql"><strong>3.1安装pymysql</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><strong>3.2创建数据库</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><strong>3.3连接数据库</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3"><strong>3.4创建表</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4"><strong>3.5插入数据</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5"><strong>3.6查询数据</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6"><strong>3.7更新数据</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7"><strong>3.8删除数据</strong></a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Python与数据库</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>三、使用Python3操作数据库</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/operation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python3">
+<h1>三、使用Python3操作数据库<a class="headerlink" href="#python3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pymysql">
+<h2><strong>3.1安装pymysql</strong><a class="headerlink" href="#pymysql" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>使用pip命令安装pymysql</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pymysql</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><strong>3.2创建数据库</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>使用navicat创建数据库</dt><dd><div class="line-block">
+<div class="line">右键新建数据库并输入库名即可,这里我创建了名为school的数据库</div>
+</div>
+</dd>
+</dl>
+<img alt="https://graph.baidu.com/resource/1220c47c78e4fd2cd09ac01592379181.jpg" src="https://graph.baidu.com/resource/1220c47c78e4fd2cd09ac01592379181.jpg" />
+</div>
+<div class="section" id="id2">
+<h2><strong>3.3连接数据库</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>这里要用到pymysql.connect()来打开数据的连接，并用cursor()方法创建一个游标对象来接收游标</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="c1">#打开连接</span>
+<span class="n">link</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="n">passwd</span> <span class="o">=</span> <span class="s2">&quot;20000926&quot;</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;school&quot;</span><span class="p">,</span> <span class="n">charset</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="c1">#获取游标</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><strong>3.4创建表</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>使用execute来执行SQL语句</dt><dd><div class="line-block">
+<div class="line">execute(query,args=None)</div>
+</div>
+<div class="line-block">
+<div class="line">函数作用：执行单条的sql语句，执行成功后返回受影响的行数</div>
+</div>
+<div class="line-block">
+<div class="line">参数说明：</div>
+</div>
+<div class="line-block">
+<div class="line">query：要执行的sql语句，字符串类型</div>
+</div>
+<div class="line-block">
+<div class="line">args：可选的序列或映射，用于query的参数值。如果args为序列，query中必须使用%s做占位符；如果args为映射，query中必须使用%(key)s做占位</div>
+</div>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="c1">#打开连接</span>
+<span class="n">link</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="n">passwd</span> <span class="o">=</span> <span class="s2">&quot;20000926&quot;</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;school&quot;</span><span class="p">,</span> <span class="n">charset</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="c1">#获取游标</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1">#定义要执行的SQL语句,创建一个学生表 seuStudent</span>
+<span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">CREATE TABLE seuStudent (</span>
+<span class="s2">id INT auto_increment PRIMARY KEY ,</span>
+<span class="s2">name CHAR(10) NOT NULL UNIQUE,</span>
+<span class="s2">age TINYINT NOT NULL</span>
+<span class="s2">)ENGINE=innodb DEFAULT CHARSET=UTF8MB4;</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1">#执行SQL语句</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+<span class="c1">#关闭游标</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1"># 关闭数据库连接</span>
+<span class="n">link</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>当执行完这段代码后，在navicat中刷新一下就可以看到我们刚才创建的表了。</p>
+<img alt="https://graph.baidu.com/resource/122f4f2782cb67e72177001592382527.jpg" src="https://graph.baidu.com/resource/122f4f2782cb67e72177001592382527.jpg" />
+</div>
+<div class="section" id="id4">
+<h2><strong>3.5插入数据</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>插入单个数据</strong></p></li>
+</ul>
+<p><em>最后记得一定要用.commit()进行提交</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="c1">#打开连接</span>
+<span class="n">link</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="n">passwd</span> <span class="o">=</span> <span class="s2">&quot;20000926&quot;</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;school&quot;</span><span class="p">,</span> <span class="n">charset</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="c1">#获取游标</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="n">sq1</span> <span class="o">=</span> <span class="s1">&#39;insert into seuStudent values(</span><span class="si">%s</span><span class="s1">,</span><span class="si">%s</span><span class="s1">,</span><span class="si">%s</span><span class="s1">)&#39;</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sq1</span><span class="p">,(</span><span class="mi">25</span><span class="p">,</span><span class="s1">&#39;byc&#39;</span><span class="p">,</span><span class="mi">19</span><span class="p">))</span>
+
+
+<span class="c1">#另一种插入方法</span>
+<span class="n">insert</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;insert into seustudent values(22,&#39;yy&#39;,18)&quot;</span><span class="p">)</span>
+<span class="c1">#这里的insert可以返回受影响的行数</span>
+
+
+<span class="c1">#关闭游标</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#提交数据</span>
+<span class="n">link</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c1"># 关闭数据库连接</span>
+<span class="n">link</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>可以看到表中多了两个数据。</p>
+<img alt="https://graph.baidu.com/resource/122087cb994fc6f4b3d6501592383341.jpg" src="https://graph.baidu.com/resource/122087cb994fc6f4b3d6501592383341.jpg" />
+<ul class="simple">
+<li><p><strong>插入多个数据</strong></p></li>
+</ul>
+<p><em>用到executemany(),与execute()类似</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="c1">#打开连接</span>
+<span class="n">link</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="n">passwd</span> <span class="o">=</span> <span class="s2">&quot;20000926&quot;</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;school&quot;</span><span class="p">,</span> <span class="n">charset</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="c1">#获取游标</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1">#定义要执行的SQL语句</span>
+<span class="n">sql</span> <span class="o">=</span> <span class="s1">&#39;insert into seuStudent(id,name,age) values(</span><span class="si">%s</span><span class="s1">,</span><span class="si">%s</span><span class="s1">,</span><span class="si">%s</span><span class="s1">)&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">23</span><span class="p">,</span><span class="s1">&#39;lh&#39;</span><span class="p">,</span><span class="mi">19</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">24</span><span class="p">,</span><span class="s1">&#39;ztx&#39;</span><span class="p">,</span><span class="mi">18</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="c1">#执行sql语句</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
+
+
+<span class="c1">#关闭游标</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#提交数据</span>
+<span class="n">link</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c1"># 关闭数据库连接</span>
+<span class="n">link</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>表中多了两个数据</p>
+<img alt="https://graph.baidu.com/resource/12245ea866c271383622301592383479.jpg" src="https://graph.baidu.com/resource/12245ea866c271383622301592383479.jpg" />
+</div>
+<div class="section" id="id5">
+<h2><strong>3.6查询数据</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>使用fetchone、fetchmany、fetchall三种方法提取数据</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">cursor.fetchone():获取游标所在处的一行数据，返回元组，没有则返回None</div>
+</div>
+<div class="line-block">
+<div class="line">cursor.fetchmany(size):接受size行返回结果行。如果size大于返回的结果行的数量，则会返回全部数据。</div>
+</div>
+<div class="line-block">
+<div class="line">cursor. fetchall():接收全部的返回结果行。</div>
+</div>
+<div class="line-block">
+<div class="line">在查询前必须先执行这一步cur.execute(“select * from TABLE;”)</div>
+</div>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="c1">#打开连接</span>
+<span class="n">link</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="n">passwd</span> <span class="o">=</span> <span class="s2">&quot;20000926&quot;</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;school&quot;</span><span class="p">,</span> <span class="n">charset</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="c1">#获取游标</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;select * from seuStudent;&quot;</span><span class="p">)</span>
+<span class="n">res1</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+<span class="n">res2</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchmany</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">res3</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+
+<span class="c1">#关闭游标</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#提交数据</span>
+<span class="n">link</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c1"># 关闭数据库连接</span>
+<span class="n">link</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
+<span class="go">(22, &#39;yy&#39;, 19)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>
+<span class="go">((22, &#39;yy&#39;, 19), (23, &#39;lh&#39;, 19))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res3</span><span class="p">)</span>
+<span class="go">((22, &#39;yy&#39;, 19), (23, &#39;lh&#39;, 19), (24, &#39;ztx&#39;, 18), (25, &#39;byc&#39;, 19))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><strong>3.7更新数据</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>更新单条数据</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="c1">#打开连接</span>
+<span class="n">link</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="n">passwd</span> <span class="o">=</span> <span class="s2">&quot;20000926&quot;</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;school&quot;</span><span class="p">,</span> <span class="n">charset</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="c1">#获取游标</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">update</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;update seuStudent set age = 20 where name = &#39;byc&#39;&quot;</span><span class="p">)</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">seuStudent</span> <span class="n">where</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;byc&quot;</span><span class="p">;</span><span class="s2">&quot;)</span>
+<span class="n">res1</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+<span class="c1">#关闭游标</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#提交数据</span>
+<span class="n">link</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c1"># 关闭数据库连接</span>
+<span class="n">link</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
+<span class="go">(25, &#39;byc&#39;, 20)</span>
+</pre></div>
+</div>
+<p>在navicat中也可以看到数据发生了改变</p>
+<img alt="https://graph.baidu.com/resource/122e683a1f439bdc56f9b01592386085.jpg" src="https://graph.baidu.com/resource/122e683a1f439bdc56f9b01592386085.jpg" />
+<ul class="simple">
+<li><p>更新多条数据</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="c1">#打开连接</span>
+<span class="n">link</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="n">passwd</span> <span class="o">=</span> <span class="s2">&quot;20000926&quot;</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;school&quot;</span><span class="p">,</span> <span class="n">charset</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="c1">#获取游标</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="c1">#定义SQL语句</span>
+<span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;update seuStudent set age = </span><span class="si">%s</span><span class="s2"> where name = </span><span class="si">%s</span><span class="s2">&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="s1">&#39;yy&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="s1">&#39;ztx&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">23</span><span class="p">,</span><span class="s1">&#39;lh&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="n">update</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span><span class="n">data</span><span class="p">)</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;select * from seuStudent;&#39;</span><span class="p">)</span>
+<span class="n">res1</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchmany</span><span class="p">(</span><span class="nb">all</span><span class="p">)</span>
+<span class="c1">#关闭游标</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#提交数据</span>
+<span class="n">link</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c1"># 关闭数据库连接</span>
+<span class="n">link</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
+<span class="go">((22, &#39;yy&#39;, 18), (23, &#39;lh&#39;, 23), (24, &#39;ztx&#39;, 21), (25, &#39;byc&#39;, 20))</span>
+</pre></div>
+</div>
+<p>navicat中相应改变</p>
+<img alt="https://graph.baidu.com/resource/122c2d8048a63d4a3e3c001592395462.jpg" src="https://graph.baidu.com/resource/122c2d8048a63d4a3e3c001592395462.jpg" />
+</div>
+<div class="section" id="id7">
+<h2><strong>3.8删除数据</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymysql</span>
+
+<span class="c1">#打开连接</span>
+<span class="n">link</span> <span class="o">=</span> <span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span><span class="n">passwd</span> <span class="o">=</span> <span class="s2">&quot;20000926&quot;</span><span class="p">,</span><span class="n">db</span> <span class="o">=</span> <span class="s2">&quot;school&quot;</span><span class="p">,</span> <span class="n">charset</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="c1">#获取游标</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;select * from seuStudent;&#39;</span><span class="p">)</span>
+<span class="c1">#删除单个数据</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;delete from seuStudent where id = 22&quot;</span><span class="p">)</span>
+
+<span class="c1">#定义SQL语句，删除多个数据</span>
+<span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;delete from seuStudent where id = </span><span class="si">%s</span><span class="s2">&quot;</span>
+<span class="nb">id</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">23</span><span class="p">),</span> <span class="p">(</span><span class="mi">24</span><span class="p">)]</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span><span class="nb">id</span><span class="p">)</span>
+
+<span class="c1">#关闭游标</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1">#提交数据</span>
+<span class="n">link</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="c1"># 关闭数据库连接</span>
+<span class="n">link</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>可以看，表中只剩一个元素</p>
+<img alt="https://graph.baidu.com/resource/1225cb12d011998821d3701592396016.jpg" src="https://graph.baidu.com/resource/1225cb12d011998821d3701592396016.jpg" />
+<p><strong>至此，目前了解的有关python3操作MySQL数据库的基本操作都在上面了，如果以后学了更多会继续更新此文档</strong></p>
+<p>时间:2020年6月17日</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="install.html" class="btn btn-neutral float-left" title="二、安装MySQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, thisisbadBao
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
