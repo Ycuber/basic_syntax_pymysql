@@ -17,7 +17,7 @@
 使用navicat创建数据库
  | 右键新建数据库并输入库名即可,这里我创建了名为school的数据库
 
-.. image::  https://graph.baidu.com/resource/1220c47c78e4fd2cd09ac01592379181.jpg
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/7.png?raw=true
 
 **3.3连接数据库**
 ==================
@@ -74,7 +74,7 @@
     
 当执行完这段代码后，在navicat中刷新一下就可以看到我们刚才创建的表了。
 
-.. image::  https://graph.baidu.com/resource/122f4f2782cb67e72177001592382527.jpg
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/8.png?raw=true
 
 
 **3.5插入数据**
@@ -112,7 +112,7 @@
 
 可以看到表中多了两个数据。
 
-.. image:: https://graph.baidu.com/resource/122087cb994fc6f4b3d6501592383341.jpg
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/9.png?raw=true
 
 -  **插入多个数据**
 
@@ -147,7 +147,7 @@
 
 表中多了两个数据
 
-.. image:: https://graph.baidu.com/resource/12245ea866c271383622301592383479.jpg
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/10.png?raw=true
 
 **3.6查询数据**
 ================
@@ -223,7 +223,7 @@
 
 在navicat中也可以看到数据发生了改变
 
-.. image:: https://graph.baidu.com/resource/122e683a1f439bdc56f9b01592386085.jpg
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/11.png?raw=true
 
 
 -  更新多条数据
@@ -260,7 +260,7 @@
 
 navicat中相应改变
 
-.. image:: https://graph.baidu.com/resource/122c2d8048a63d4a3e3c001592395462.jpg
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/12.png?raw=true
 
 
 **3.8删除数据**
@@ -293,7 +293,7 @@ navicat中相应改变
 
 可以看，表中只剩一个元素
 
-.. image:: https://graph.baidu.com/resource/1225cb12d011998821d3701592396016.jpg
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/13.png?raw=true
 
 
 

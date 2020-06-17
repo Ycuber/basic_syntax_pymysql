@@ -11,7 +11,7 @@
 
 我选择了第二个安装包，因为在线安装可能较慢
 
-.. image::  https://graph.baidu.com/resource/12206229578931c4bfb6801592367141.jpg
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/2.png?raw=true
 
 
 2.2安装
@@ -19,7 +19,7 @@
 打开安装包开始安装，根据提示的流程即可
 这里设置的密码就是用来登录本地root账号的数据库
 
-.. image:: https://graph.baidu.com/resource/12287f6ae82213ad8d04301592373557.jpg
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/3.png?raw=true
 
 2.3图形化软件
 =============
@@ -29,17 +29,17 @@
 
 .. _Navicat官网: https://www.navicat.com.cn/products
 
-.. image:: https://graph.baidu.com/resource/122606f312907b1c0645501592376523.jpg
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/4.png?raw=true
 
 
 打开navicat后点击连接，连接名自定义，密码就是刚才安装MySQL时设置的密码。
 
-.. image:: https://graph.baidu.com/resource/12211613244289d41d91601592374341.jpg
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/5.png?raw=true
 
 
 
 可以数据库中的内容进行操作
 
-.. image:: https://graph.baidu.com/resource/1220d743d54754173146101592376253.jpg
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/7.png?raw=true
 
 
