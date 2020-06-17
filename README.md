@@ -1,0 +1,1 @@
+# basic_syntax_pymysql
