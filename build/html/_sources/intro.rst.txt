@@ -16,4 +16,4 @@
 
    常见的DBMS：MySQL、Oracle、DB2、SQLite等
 
-.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/1.png?raw=true
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/15.png?raw=true

@@ -10,6 +10,7 @@
 
     pip install pymysql
 
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/7.png?raw=true
 
 **3.2创建数据库**
 ==================
@@ -17,7 +18,7 @@
 使用navicat创建数据库
  | 右键新建数据库并输入库名即可,这里我创建了名为school的数据库
 
-.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/7.png?raw=true
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/8.png?raw=true
 
 **3.3连接数据库**
 ==================
@@ -74,7 +75,7 @@
     
 当执行完这段代码后，在navicat中刷新一下就可以看到我们刚才创建的表了。
 
-.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/8.png?raw=true
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/9.png?raw=true
 
 
 **3.5插入数据**
@@ -112,7 +113,7 @@
 
 可以看到表中多了两个数据。
 
-.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/9.png?raw=true
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/10.png?raw=true
 
 -  **插入多个数据**
 
@@ -147,7 +148,7 @@
 
 表中多了两个数据
 
-.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/10.png?raw=true
+.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/11.png?raw=true
 
 **3.6查询数据**
 ================
@@ -221,9 +222,7 @@
 >>> print(res1)
 (25, 'byc', 20)
 
-在navicat中也可以看到数据发生了改变
 
-.. image::  https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/11.png?raw=true
 
 
 -  更新多条数据

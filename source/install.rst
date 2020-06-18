@@ -11,7 +11,7 @@
 
 我选择了第二个安装包，因为在线安装可能较慢
 
-.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/2.png?raw=true
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/1.png?raw=true
 
 
 2.2安装
@@ -29,17 +29,17 @@
 
 .. _Navicat官网: https://www.navicat.com.cn/products
 
-.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/4.png?raw=true
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/6.png?raw=true
 
 
 打开navicat后点击连接，连接名自定义，密码就是刚才安装MySQL时设置的密码。
 
-.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/5.png?raw=true
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/4.png?raw=true
 
 
 
 可以数据库中的内容进行操作
 
-.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/7.png?raw=true
+.. image:: https://github.com/Ycuber/basic_syntax_pymysql/blob/master/img/5.png?raw=true
 
 
